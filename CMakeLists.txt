@@ -16,6 +16,7 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
 add_subdirectory(thirdParty/glfw)
 include_directories(thirdParty/glad/include)
+include_directories(thirdParty/)
 
 set(OPENGL_GL_VERSION "4.6")
 set(OPENGL_GLU_VERSION "4.6")
@@ -23,7 +24,7 @@ set(OPENGL_GL_PREFER_NEWER_LIBRARIES ON)
 set(OPENGL_GL_PREFERENCE GLVND)
 find_package(OpenGL REQUIRED)
 
-add_executable(Glen thirdParty/glad/src/glad.c src/main.cpp src/Shader.cpp src/Shader.h src/Logger.h src/VBO.cpp src/VBO.h src/EBO.cpp src/EBO.h src/VAO.cpp src/VAO.h)
+add_executable(Glen thirdParty/glad/src/glad.c src/main.cpp src/Shader.cpp src/Shader.h src/Logger.h src/VBO.cpp src/VBO.h src/EBO.cpp src/EBO.h src/VAO.cpp src/VAO.h src/Texture.cpp src/Texture.h src/stb.cpp)
 target_link_libraries(Glen glfw OpenGL::GL)
 
 

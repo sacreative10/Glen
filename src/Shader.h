@@ -24,6 +24,8 @@ public:
     glUniform1f(glGetUniformLocation(shaderProgram, name.c_str()), value);
   }
 
+  GLuint GetShaderID() const { return shaderProgram; }
+
 private:
   static GLuint loadShader(const char *path, GLenum shaderType);
 
