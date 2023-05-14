@@ -8,6 +8,8 @@
 #include <glad/glad.h>
 #include <string>
 
+#include <glm/glm.hpp>
+
 namespace GL_UTILITY {
 
 class Shader {
@@ -22,6 +24,10 @@ public:
 
   void setFloat(const std::string &name, GLfloat value) const {
     glUniform1f(glGetUniformLocation(shaderProgram, name.c_str()), value);
+  }
+  void setMatrix4x4(const std::string &name, GLfloat *value) const {
+    glUniformMatrix4fv(glGetUniformLocation(shaderProgram, name.c_str()), 1,
+                       GL_FALSE, value);
   }
 
   GLuint GetShaderID() const { return shaderProgram; }
